@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/serega/static/css/main.10f03808.css",
-    "main.js": "/serega/static/js/main.8874b9ad.js",
-    "index.html": "/serega/index.html",
-    "main.10f03808.css.map": "/serega/static/css/main.10f03808.css.map",
-    "main.8874b9ad.js.map": "/serega/static/js/main.8874b9ad.js.map"
+    "main.css": "/rsClone/static/css/main.10f03808.css",
+    "main.js": "/rsClone/static/js/main.8874b9ad.js",
+    "index.html": "/rsClone/index.html",
+    "main.10f03808.css.map": "/rsClone/static/css/main.10f03808.css.map",
+    "main.8874b9ad.js.map": "/rsClone/static/js/main.8874b9ad.js.map"
   },
   "entrypoints": [
     "static/css/main.10f03808.css",
