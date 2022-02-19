@@ -1,0 +1,21 @@
+@import './colors.scss';
+
+@mixin default-hover {
+  &:hover {
+    transform: scale(1.02);
+    transition: 0.2s;
+    cursor: pointer;
+  }
+}
+
+@mixin default-button-hover {
+    background-color: $default-button-hover-color;
+    color: $secondary-color-text;
+    transform: scale(1.02);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+@mixin burger-menu-hover {
+  cursor: pointer;
+}

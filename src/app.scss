@@ -1,0 +1,8 @@
+@import './styles//utils/utils.scss';
+
+.container {
+  margin: 50px;
+  @include phones {
+    margin: 20px;
+  }
+}

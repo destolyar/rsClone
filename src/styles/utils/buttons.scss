@@ -1,0 +1,31 @@
+@import '../utils/colors.scss';
+@import '../utils/font.scss';
+@import '../utils/hovers.scss';
+
+
+@mixin default-button {
+  border: 0;
+  border-radius: 12px;
+  padding: 10px;
+  color: $default-color-text;
+  background-color: $default-button-color;
+  
+  &:hover {
+    @include default-button-hover;
+  }
+}
+
+@mixin login-button {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 30px 10px 30px;
+
+  &:hover {
+    @include default-hover;
+  }
+
+  @include tablets {
+    background-color: rgb(175, 170, 170);
+  }
+  
+}

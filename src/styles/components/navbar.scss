@@ -1,0 +1,164 @@
+@import '../utils/utils.scss';
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 20% 20px 20%;
+  background-color: $default-background-color;
+  overflow: hidden;
+
+  @include laptop {
+    flex-direction: column;
+    padding-right: 15%;
+    padding-left: 15%;
+  }
+
+  @include tablets {
+    padding: 20px 50px 20px 50px;
+  }
+
+  
+  &__burger-menu-button {
+    display: none;
+    height: 30px;
+    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: space-around;
+    z-index: 10;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    @include tablets {
+      display: flex;
+    }
+    
+    &:hover {
+      @include burger-menu-hover;
+    }
+
+    &__line {
+      height: 2px;
+      width: 30px;
+      background-color: $default-color-text
+    }
+  }
+
+  &__content{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.7s;
+
+    @include tablets {
+      margin-left: -1500px;
+      flex-direction: column;
+      position: absolute;
+      width: 100%;
+      top: 80px;
+      overflow: hidden;
+      z-index: 20;
+
+      background-color: rgb(175, 170, 170);
+    }
+
+    &__item-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include tablets{
+        padding: 20px;
+        width: 100%;
+        background-color: rgb(175, 170, 170);
+        
+        &:hover {
+          background-color: rgb(80, 80, 80);
+        }
+      }
+
+      &__link {
+        @include defaultFont;
+        @include default-hover;
+        text-decoration: none;
+        font-size: 1.1rem;
+        color: $default-color-text;
+      }
+
+      &__login {
+        width: 100%;
+        @include login-button;
+        font-size: 0.8rem;
+
+        @include tablets {
+          background-color: rgb(175, 170, 170);
+          color: $default-color-text;
+          font-size: 1.1rem;
+          padding: 0;
+        }
+
+        &:hover {
+          @include tablets {
+            background-color: rgb(80, 80, 80);
+            color: $default-color-text;
+          }
+        }
+      }
+
+      &__registration {
+        width: 100%;
+        @include default-button;
+        font-size: 1.1rem;
+
+        @include tablets {
+          color: $default-color-text;
+          background-color: rgb(175, 170, 170);
+          font-size: 1.1rem;
+          padding: 0;
+        }
+        
+        &:hover {
+          @include tablets {
+            background-color: rgb(80, 80, 80);
+            color: $default-color-text;
+          }
+        }
+      }
+    }
+  }
+}
+
+#burger-checkbox-label {
+  @include tablets {
+    padding-right: calc(100% - 50px);
+  }
+
+  @include phones {
+    margin-right: 25%;
+  }
+}
+
+#burger-checkbox {
+  display: none;
+}
+
+#burger-checkbox:checked ~ .navbar__content {
+  margin-left: 0px;
+}
+
+#mobile-image {
+  display: none;
+  @include phones {
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+#login-button {
+  margin-left: 200px;
+  @include tablets {
+    margin-left: 0;
+  }
+}
