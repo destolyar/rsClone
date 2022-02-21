@@ -1,15 +1,20 @@
 import { ResortsCard } from './ResortsCard';
-import data from './resorts_list.json';
 import '../../styles/components/resorts.scss';
 import { Response } from '../utils/Response';
+import { Requests } from '../utils/Requests'
 import { LimitTags } from './LimitTags';
 import { RangeSlider } from './RangeSlider';
 import { useSelector } from 'react-redux';
 import { ResortsCardInfo, SearchParametrs } from '../../types';
 import { normalizeHeigh } from '../utils/normalize';
-import { useState, createRef } from 'react';
+import { useState } from 'react';
+
+//import data from './resorts_list.json'
+
 
 export const Resorts: React.FunctionComponent = () => {
+  let requests = new Requests();
+  let data: any = requests.getResorts()
   let response = new Response(data);
 
   const defaultState = {
@@ -33,27 +38,33 @@ export const Resorts: React.FunctionComponent = () => {
     SearchParametrs?.cabel !== undefined || 
     SearchParametrs?.rating !== undefined ||
     SearchParametrs?.tags !== undefined) {
+
       if(SearchParametrs.country !== undefined) {
         displayData = displayData.filter((i) => SearchParametrs.country.includes(i.country))
       }
+
       if(SearchParametrs.heigh !== undefined) {
         displayData = displayData.filter((i) => normalizeHeigh(i.heigh, SearchParametrs.heigh))
       }
+
       if(SearchParametrs.slopes !== undefined) {
         displayData = displayData.filter((i) => i.slopes.total !== null && 
         i.slopes.total >= SearchParametrs.slopes[0] && 
         i.slopes.total <= SearchParametrs.slopes[1])
       }
+
       if(SearchParametrs.cabel !== undefined) {
         displayData = displayData.filter((i) => i.cabel.total !== null &&
         i.cabel.total >= SearchParametrs.cabel[0] &&
         i.cabel.total <= SearchParametrs.cabel[1])
       }
+
       if(SearchParametrs.rating !== undefined) {
         displayData = displayData.filter((i) => i.rate !== null &&
         i.rate >= SearchParametrs.rating[0] &&
         i.rate <= SearchParametrs.rating[1])
       }
+      
       if(SearchParametrs.tags !== undefined) {
         displayData = displayData.filter((i) => SearchParametrs.tags !== null && 
         SearchParametrs.tags.includes('winter' || 'snowboard' || 'ski' || 'active'))
@@ -78,10 +89,12 @@ export const Resorts: React.FunctionComponent = () => {
         <RangeSlider range={defaultState.cabel} type='Cabel'/>
         <RangeSlider range={defaultState.rating} type='Rating'/>
         <LimitTags items={defaultState.tags} type = 'Tags'/>
+
         <div className='resorts__filters__controls'>
           <a href='' className='resorts__filters__controls__reset'>Сбросить фильтры</a>
           <div className='resorts__filters__controls__accept'>Применить фильтры</div>
         </div>
+        
       </div>
       <div className='resorts__results'>
         {filtredData?.map((i: ResortsCardInfo) => {

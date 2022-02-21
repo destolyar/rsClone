@@ -1,6 +1,21 @@
 @import '../utils/utils.scss';
 
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 80px;
+  padding: 0px 50px;
   background-color: $default-background-color;
+
+  &__link {
+    @include defaultFont;
+    text-decoration: none;
+    color: $default-color-text;
+
+    &:hover {
+      @include default-hover;
+      color: $default-button-color;
+    }
+  }
 }

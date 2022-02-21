@@ -1,7 +1,7 @@
 import { ResortsCardInfo } from '../../types'
 
 export class Response {
-  responseObject: ResortsCardInfo[];
+  responseObject: ResortsCardInfo[] = [];
 
   constructor(response: ResortsCardInfo[]) {
     this.responseObject = response;

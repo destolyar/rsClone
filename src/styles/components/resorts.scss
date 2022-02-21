@@ -132,6 +132,11 @@
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 
+    @include phones {
+      margin-top: -40px;
+      margin-left: -20px;
+    }
+
     &:hover {
       background-color: $default-button-color; 
       transition: 0.2s;
