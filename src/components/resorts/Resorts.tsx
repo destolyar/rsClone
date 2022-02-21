@@ -9,12 +9,11 @@ import { ResortsCardInfo, SearchParametrs } from '../../types';
 import { normalizeHeigh } from '../utils/normalize';
 import { useState } from 'react';
 
-//import data from './resorts_list.json'
-
+import data from './resorts_list.json'
 
 export const Resorts: React.FunctionComponent = () => {
-  let requests = new Requests();
-  let data: any = requests.getResorts()
+  //let requests = new Requests();
+  //let data: any = requests.getResorts()
   let response = new Response(data);
 
   const defaultState = {
@@ -91,8 +90,7 @@ export const Resorts: React.FunctionComponent = () => {
         <LimitTags items={defaultState.tags} type = 'Tags'/>
 
         <div className='resorts__filters__controls'>
-          <a href='' className='resorts__filters__controls__reset'>Сбросить фильтры</a>
-          <div className='resorts__filters__controls__accept'>Применить фильтры</div>
+          <a href='' className='resorts__filters__controls__reset'>Сбросить фильтры</a>n
         </div>
         
       </div>
