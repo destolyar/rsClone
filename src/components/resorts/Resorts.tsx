@@ -7,15 +7,20 @@ import { RangeSlider } from './RangeSlider';
 import { useSelector } from 'react-redux';
 import { ResortsCardInfo, SearchParametrs } from '../../types';
 import { normalizeHeigh } from '../utils/normalize';
-import { useState } from 'react';
-
-//import data from './resorts_list.json'
-
+import { useEffect, useState } from 'react';
 
 export const Resorts: React.FunctionComponent = () => {
-  let requests = new Requests();
-  let data: any = requests.getResorts()
-  let response = new Response(data);
+  let [card, setCard] = useState([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await Requests.getResorts()
+      setCard(result)
+    }
+    fetchData()
+  }, [])
+  
+  let response = new Response(card);
 
   const defaultState = {
     country: response.getCountry(),
@@ -30,7 +35,7 @@ export const Resorts: React.FunctionComponent = () => {
   let [numCardsForDisplay, setNumCardsForDisplay] = useState<number>(10)
   let [loadButtonDisplay, setLoadButtonDisplay] = useState<{display: string}>({display: 'flex'})
 
-  let displayData: ResortsCardInfo[] = data;
+  let displayData: ResortsCardInfo[] = card;
 
   if(SearchParametrs?.country !== undefined || 
     SearchParametrs?.heigh !== undefined ||
@@ -92,7 +97,6 @@ export const Resorts: React.FunctionComponent = () => {
 
         <div className='resorts__filters__controls'>
           <a href='' className='resorts__filters__controls__reset'>Сбросить фильтры</a>
-          <div className='resorts__filters__controls__accept'>Применить фильтры</div>
         </div>
         
       </div>
