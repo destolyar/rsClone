@@ -15,6 +15,9 @@ export const Navbar: React.FunctionComponent = () => {
           <a className='navbar__content__item-container__link' href="">Поездки</a>
         </div>
         <div className="navbar__content__item-container">
+          <a className='navbar__content__item-container__link' href="">Курорты</a>
+        </div>
+        <div className="navbar__content__item-container">
           <a className='navbar__content__item-container__link' href="">Профиль</a>
         </div>
         <div className="navbar__content__item-container">
