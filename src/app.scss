@@ -1,5 +1,10 @@
 @import './styles//utils/utils.scss';
 
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   margin: 50px;
   @include phones {
