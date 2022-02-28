@@ -1,0 +1,66 @@
+@import '../utils/utils.scss';
+
+.auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  backdrop-filter: blur(2px);
+  z-index: 25;
+
+  &__registration, &__login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    min-width: 50%;
+    min-height: 40%;
+    border-radius: 30px;
+    background-color: $form-background-color;
+
+    @include desktop {
+      width: 70%;
+      height: 50%;
+    }
+
+    @include tablets {
+      width: 80%;
+    }
+
+    @include phones {
+      width: 90%;
+    }
+
+    &__title {
+      @include title;
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      &__subtitle {
+        @include subtitle;
+      }
+
+      &__input {
+        height: 30px;
+        width: 300px;
+        border: 0;
+        border-radius: 20px;
+      }
+
+      &__button {
+        margin-top: 20px;
+        @include form-registration-button;
+      }
+    }
+  }
+}

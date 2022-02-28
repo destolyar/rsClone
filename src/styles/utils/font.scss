@@ -4,3 +4,34 @@
 @mixin defaultFont {
   font-family: 'Poppins', sans-serif;
 }
+
+@mixin title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  color: $default-color-text;
+}
+
+@mixin subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  color: $default-color-text;
+}
+
+@mixin description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: $default-color-text;
+}
+
+@mixin starter-button-text {
+  font-family: 'Poppins', sans-serif;
+  color: $default-color-text;
+  text-decoration: none;
+  font-size: 1.3rem;
+
+  @include default-hover;
+
+  &:hover {
+    
+  }
+}

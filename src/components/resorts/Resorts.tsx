@@ -16,6 +16,10 @@ export const Resorts: React.FunctionComponent = () => {
     const fetchData = async () => {
       const result = await Requests.getResorts()
       setCard(result)
+
+      let usResults = await Requests.getAllUsers()
+      console.log("Не забыть удалить")
+      console.log(usResults)
     }
     fetchData()
   }, [])

@@ -21,7 +21,7 @@ export const ResortsCard: React.FunctionComponent<ResortsCardInfo> = (props) => 
           <p className="resorts__results__item__info__block__item">Рейтинг: {props.rate || 'Неизвестно'}</p>
           <p className="resorts__results__item__info__block__item">Теги: {props.tag?.map((i) => {return `#${i} ` || ''})}</p>
         </div>
-        <button className="resorts__results__item__info__join">Присоединиться к поездке</button>
+        <button className="resorts__results__item__info__join">Создать поездку</button>
       </div>
     </div>
   )

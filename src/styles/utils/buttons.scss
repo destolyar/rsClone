@@ -20,12 +20,58 @@
   border-radius: 10px;
   padding: 10px 30px 10px 30px;
 
-  &:hover {
-    @include default-hover;
-  }
+  @include default-hover;
 
   @include tablets {
     background-color: rgb(175, 170, 170);
   }
   
+}
+
+@mixin starter-button {
+  @include starter-button-text;
+  margin: 40px;
+  padding: 40px 190px;
+  border: solid white 1px;
+  border-radius: 60px;
+  background-color: rgba(0, 125, 215, 0);
+  
+
+  &:hover {
+    background-color: lighten(#cc2b5e, 10%);
+  }
+
+  @include desktop {
+    padding: 30px 143px;
+  }
+
+  @include laptop {
+    padding: 24px 114px;
+  }
+
+  @include tablets {
+    padding: 30px 143px;
+  }
+
+  @include phones {
+    padding: 23px 100px;
+  }
+}
+
+@mixin form-registration-button {
+  height: 60px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 20px;
+
+  @include description;
+  color: $secondary-color-text;
+
+  &:hover {
+    @include default-button-hover;
+    background-color: $default-button-color;
+  }
 }

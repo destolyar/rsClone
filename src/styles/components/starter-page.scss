@@ -1,0 +1,28 @@
+@import '../utils/utils.scss';
+
+.starter-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: linear-gradient(45deg, $default-background-color, #cc2b5e);
+  background-size: 200% 200%;
+  animation: gradient 10s ease infinite;
+
+  @include tablets {
+    flex-direction: column;
+  }
+
+  &__button-trips, &__button-resorts {
+    @include starter-button;
+  }
+
+  &__button-resorts {
+    &:hover {
+      background-color: lighten($default-background-color, 15%);
+    }
+  }
+}
+

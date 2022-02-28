@@ -41,3 +41,22 @@ export interface RangeSliderProps {
   type: string;
   range: number[];
 }
+
+export interface TripsCardInfo {
+  country: string,
+  end_date: string,
+  max_participants: number,
+  participants: string[],
+  resort_name: string,
+  start_date: string,
+  starter_user_id: string,
+  starter_user_name: string,
+  trip_name: string,
+  _id: string
+}
+
+export interface AuthProps {
+  display: boolean,
+  type: boolean,
+  setDisplay: any
+}
