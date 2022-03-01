@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect } from 'react';
+import { useState } from 'react';
 import { Requests } from '../utils/Requests';
 import '../../styles/components/auth.scss'
 import { AuthProps } from '../../types'

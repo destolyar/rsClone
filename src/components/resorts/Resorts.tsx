@@ -37,7 +37,6 @@ export const Resorts: React.FunctionComponent = () => {
 
   let SearchParametrs: SearchParametrs | any = useSelector(state => state)
   let [numCardsForDisplay, setNumCardsForDisplay] = useState<number>(10)
-  let [loadButtonDisplay, setLoadButtonDisplay] = useState<{display: string}>({display: 'flex'})
 
   let displayData: ResortsCardInfo[] = card;
 
@@ -75,7 +74,7 @@ export const Resorts: React.FunctionComponent = () => {
       }
       
       if(SearchParametrs.tags !== undefined) {
-        displayData = displayData.filter((i) => SearchParametrs.tags !== null && 
+        displayData = displayData.filter(() => SearchParametrs.tags !== null && 
         SearchParametrs.tags.includes('winter' || 'snowboard' || 'ski' || 'active'))
       }
   }
@@ -118,7 +117,7 @@ export const Resorts: React.FunctionComponent = () => {
           key={`resort${i.id}`}/>
         })}
       </div>
-      <div style={loadButtonDisplay} onClick={() => {setNumCardsForDisplay(numCardsForDisplay += 10)}} className='resorts__load-more-cards'>
+      <div onClick={() => {setNumCardsForDisplay(numCardsForDisplay += 10)}} className='resorts__load-more-cards'>
         <h1 className='resorts__load-more-cards__title'>Загрузить ещё 10</h1>
       </div>
     </div>

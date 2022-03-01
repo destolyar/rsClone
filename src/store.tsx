@@ -1,6 +1,4 @@
 import { createStore } from 'redux'
-import { Response } from './components/utils/Response'
-import data from './components/resorts/resorts_list.json'
 import { SearchParametrs } from './types'
 
 

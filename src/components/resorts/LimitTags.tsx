@@ -2,7 +2,6 @@ import * as React from 'react';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import { LimitTagsProps } from '../../types'
-import { SyntheticEventData } from 'react-dom/test-utils';
 
 import { useDispatch } from 'react-redux';
 
@@ -16,13 +15,9 @@ export const LimitTags: React.FunctionComponent<LimitTagsProps> = (props) => {
     modifedItems.push({title: i})
   })
 
-  const displayItems = () => {
-    
-  }
-
   return (
     <Autocomplete
-      onChange={(event, value) => {
+      onChange={(_event, value) => {
         let picked:any = [];
         if(picked !== undefined) {
           value.forEach((i) => {

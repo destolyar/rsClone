@@ -21,7 +21,7 @@ export const RangeSlider: React.FunctionComponent<RangeSliderProps> = (props) =>
 
   let [value, setValue] = React.useState<number[]>([minValue, maxValue]);
 
-  const handleChange = (event: Event, newValue: number | number[]) => {
+  const handleChange = (_event: Event, newValue: number | number[]) => {
     setValue(newValue as number[]);
     if(props.type === 'Heigh') {
       dispatch({type: "ADD_HEIGH", heigh: newValue})

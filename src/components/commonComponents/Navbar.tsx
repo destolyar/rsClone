@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Auth } from '../commonComponents/Auth';
 import { useState } from 'react';
 
-export const Navbar: React.FunctionComponent = (props) => {
+export const Navbar: React.FunctionComponent = () => {
   let [authDisplay, setAuthDisplay] = useState<boolean>(false)
   let [itsLogin, setItsLogin] = useState<boolean>(true)
 

@@ -1,6 +1,5 @@
 export const normalizeHeigh = (str: string | null, parametrs: number[]) => {
   if(str === null) return false
-  let heigh: string[] = []
   let heighSorted: number[] = [];
 
   heighSorted.push(Number(str.slice(str.indexOf('-') + 2)))
